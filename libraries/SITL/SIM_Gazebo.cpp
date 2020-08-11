@@ -116,12 +116,17 @@ void Gazebo::recv_fdm(const struct sitl_input &input)
     velocity_ef = Vector3f(static_cast<float>(pkt.velocity_xyz[0]),
                            static_cast<float>(pkt.velocity_xyz[1]),
                            static_cast<float>(pkt.velocity_xyz[2]));
+    ang_accel = Vector3f(static_cast<float>(pkt.imu_ang_accel[0]),
+                        static_cast<float>(pkt.imu_ang_accel[1]),
+                        static_cast<float>(pkt.imu_ang_accel[2]));
 
     position = Vector3f(static_cast<float>(pkt.position_xyz[0]),
                         static_cast<float>(pkt.position_xyz[1]),
                         static_cast<float>(pkt.position_xyz[2]));
 
-
+    airspeed = static_cast<float>(pkt.airspeed);
+    airspeed_pitot = airspeed;
+    
     // auto-adjust to simulation frame rate
     time_now_us += static_cast<uint64_t>(deltat * 1.0e6);
 

@@ -156,6 +156,7 @@ protected:
     Vector3f gyro;                       // rad/s
     Vector3f velocity_ef;                // m/s, earth frame
     Vector3f wind_ef;                    // m/s, earth frame
+    Vector3f ang_accel;
     Vector3f velocity_air_ef;            // velocity relative to airmass, earth frame
     Vector3f velocity_air_bf;            // velocity relative to airmass, body frame
     Vector3f position;                   // meters, NED from origin

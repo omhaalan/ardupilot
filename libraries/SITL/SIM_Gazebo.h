@@ -59,7 +59,10 @@ private:
       double imu_linear_acceleration_xyz[3];
       double imu_orientation_quat[4];
       double velocity_xyz[3];
+      double imu_ang_accel[3];
       double position_xyz[3];
+      double airspeed;
+      double airspeed_pitot;
     };
 
     void recv_fdm(const struct sitl_input &input);
