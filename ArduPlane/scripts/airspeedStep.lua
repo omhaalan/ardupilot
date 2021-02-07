@@ -6,7 +6,7 @@ function airspeedStep()
 	current = mission:get_current_nav_index()
 
 	if current > 4 then
-		if flag == 0
+		if flag == 0 then
 			prev = current
 			flag = 1
 		end
