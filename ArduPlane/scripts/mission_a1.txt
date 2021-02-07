@@ -1,0 +1,7 @@
+local e = 0.0818
+local re = 6378137
+local rp = 6356752
+
+function create_mission()
+    if mission:get_current_nav_index() == 2 then
+        

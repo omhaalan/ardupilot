@@ -122,7 +122,6 @@ segv_*out
 /Rover/scripts/
 /AntennaTracker/scripts/
 /ArduCopter/scripts/
-/ArduPlane/scripts/
 /ArduSub/scripts/
 persistent.dat
 dumpstack_*out
