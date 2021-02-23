@@ -1,7 +1,7 @@
 param:set("TRIM_ARSPD_CM", 1800)
 local flag = 0
 
-airspd = param:get("TRIM_ARSP_CM")
+airspd = param:get("TRIM_ARSPD_CM")
 message = "Lua script is online, airspeed = " .. airspd
 gcs:send(0, message)
 
