@@ -1,6 +1,9 @@
-local baseline = param:get("TRIM_ARSPD_CM")
+param:set("TRIM_ARSPD_CM", 1800)
 local flag = 0
- 
+
+airspd = param:get("TRIM_ARSP_CM")
+message = "Lua script is online, airspeed = " .. airspd
+gcs:send(0, message)
 
 function airspeedStep()
 	current = mission:get_current_nav_index()
@@ -16,10 +19,9 @@ function airspeedStep()
 			message = "New speed has been set"
 			gcs:send_text(0, message)
 			if current % 2 == 0 then
-				gain = flag * 0.1 * baseline
-				param:set("TRIM_ARSPD_CM", baseline+gain)
+				param:set("TRIM_ARSPD_CM", 2000)
 			else
-				param:set("TRIM_ARSPD_CM", baseline)
+				param:set("TRIM_ARSPD_CM", 1700)
 			end
 
 		end
