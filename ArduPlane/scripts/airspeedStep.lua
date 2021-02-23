@@ -12,9 +12,16 @@ function airspeedStep()
 		end
 		if current ~= prev then
 			prev = current
-			gain = flag * 0.1 * baseline
 			flag = flag + 1
-			param:set("TRIM_ARSPD_CM", baseline+gain)
+			message = "New speed has been set"
+			gcs:send_text(0, message)
+			if current % 2 == 0 then
+				gain = flag * 0.1 * baseline
+				param:set("TRIM_ARSPD_CM", baseline+gain)
+			else
+				param:set("TRIM_ARSPD_CM", baseline)
+			end
+
 		end
 	end
 	return airspeedStep, 100
