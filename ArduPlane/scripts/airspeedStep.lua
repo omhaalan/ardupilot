@@ -3,7 +3,7 @@ local flag = 0
 
 airspd = param:get("TRIM_ARSPD_CM")
 message = "Lua script is online, airspeed = " .. airspd
-gcs:send(0, message)
+gcs:send_text(0, message)
 
 function airspeedStep()
 	current = mission:get_current_nav_index()
